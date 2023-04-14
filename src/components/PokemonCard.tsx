@@ -16,7 +16,7 @@ export function PokemonCard({ pokemon }: PokemonCardProps) {
   if (isLoading) return <CardSkeleton />
 
   return (
-    <div className="border rounded hover:opacity-80 transition">
+    <div className="p-4 border rounded-lg shadow-md hover:opacity-80 transition">
       {/* <span className={data?.types[0].type.name}> */}
       <span>#{renderId(String(data?.id))}</span>
 

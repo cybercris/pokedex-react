@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 
 import queryClient from './services/queryClient'
 import { Router } from './Router'
+import './index.css'
 
 export function App() {
   return (
