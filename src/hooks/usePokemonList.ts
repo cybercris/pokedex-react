@@ -11,7 +11,6 @@ async function getPokemonList(
   const { data } = await api.get<GetPokemonListResponse>(
     `pokemon?limit=${limit}&offset=${offset}`,
   )
-
   return data
 }
 

@@ -8,7 +8,7 @@ export function Router() {
     <Routes>
       <Route path="/">
         <Route path="/" element={<Home />} />
-        <Route path="/:id/pokemon" element={<Pokemon />} />
+        <Route path="/pokemon/:name" element={<Pokemon />} />
       </Route>
     </Routes>
   )
