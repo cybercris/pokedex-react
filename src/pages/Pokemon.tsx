@@ -14,16 +14,22 @@ import { useFavorites } from '../contexts/FavoritesContext'
 import api from '../services/api'
 import { renderAbilityName, renderId, renderStatName } from '../utils'
 
+interface PokemonListResponse {
+  count: number
+}
+
 export function Pokemon() {
   const { id } = useParams()
-  const { data, isLoading, error } = usePokemon(id)
+  const { data, error } = usePokemon(id ?? '')
   const { toggleFavorite, favorites } = useFavorites()
   const [isFavorite, setIsFavorite] = useState(false)
-  const [count, setCount] = useState()
+  const [count, setCount] = useState(1)
 
   useEffect(() => {
     async function getPokemonCount() {
-      const { count } = await api.get('pokemon')
+      const {
+        data: { count },
+      } = await api.get<PokemonListResponse>('pokemon')
       setCount(count)
     }
     getPokemonCount()
@@ -57,7 +63,7 @@ export function Pokemon() {
           <button
             type="button"
             className="hover:opacity-70 transition-all self-center mt-0.5"
-            onClick={() => toggleFavorite(data)}
+            onClick={() => data && toggleFavorite(data)}
           >
             {isFavorite ? <BsStarFill size={24} /> : <BsStar size={24} />}
           </button>
@@ -95,7 +101,7 @@ export function Pokemon() {
               <Link
                 to={`/pokemon/${data.id + 1}`}
                 className={`justify-end -mt-24 ${
-                  data?.id >= count ? 'hidden' : ''
+                  count && data?.id >= count ? 'hidden' : ''
                 }`}
                 title={`Go to Pokémon #${data?.id + 1}`}
               >

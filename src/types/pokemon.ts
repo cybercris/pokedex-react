@@ -1,6 +1,6 @@
 export interface SimpleAttribute {
   name: string
-  url: string
+  url?: string
 }
 
 interface Ability {

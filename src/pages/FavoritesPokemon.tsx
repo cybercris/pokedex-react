@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { MdCatchingPokemon } from 'react-icons/md'
 
 import { PokemonCard } from '../components/PokemonCard'
-import { Loader } from '../components/Loader'
 import { useFavorites } from '../contexts/FavoritesContext'
 
 export function FavoritesPokemon() {
@@ -25,15 +24,15 @@ export function FavoritesPokemon() {
           >
             <MdCatchingPokemon className="mr-3" size={34} /> Pokédex
           </Link>
-          {/* {isLoading && <Loader />} */}
         </div>
       </header>
       <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {favorites.map((pokemon) => (
-          <li key={pokemon.name}>
-            <PokemonCard pokemon={pokemon} />
-          </li>
-        ))}
+        {favorites &&
+          favorites.map((pokemon) => (
+            <li key={pokemon.name}>
+              <PokemonCard pokemon={pokemon} />
+            </li>
+          ))}
       </ul>
     </main>
   )

@@ -11,24 +11,3 @@
         @apply m-0 p-0 box-border antialiased bg-slate-100
     }
 }
-
-@layer components {
-    .normal {}
-    .fighting {}
-    .flying{}
-    .poison{}
-    .ground{}
-    .rock{}
-    .bug{}
-    .ghost{}
-    .steel{}
-    .fire{}
-    .water{}
-    .grass{}
-    .electric{}
-    .psychic{}
-    .ice{}
-    .dragon{}
-    .dark{}
-    .fairy{}
-}

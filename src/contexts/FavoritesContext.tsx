@@ -20,23 +20,30 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
   const [favorites, setFavorites] = useLocalStorage<Pokemon[]>('favorites', [])
 
   function addFavorite(pokemon: Pokemon) {
-    setFavorites([...favorites, pokemon])
+    favorites && setFavorites([...favorites, pokemon])
   }
 
   function removeFavorite(pokemon: Pokemon) {
-    setFavorites(favorites.filter((favorite) => favorite.name !== pokemon.name))
+    favorites &&
+      setFavorites(
+        favorites.filter((favorite) => favorite.name !== pokemon.name),
+      )
   }
 
   function toggleFavorite(pokemon: Pokemon) {
-    if (favorites.some((favorite) => favorite.name === pokemon.name)) {
-      removeFavorite(pokemon)
-    } else {
-      addFavorite(pokemon)
+    if (favorites) {
+      if (favorites.some((favorite) => favorite.name === pokemon.name)) {
+        removeFavorite(pokemon)
+      } else {
+        addFavorite(pokemon)
+      }
     }
   }
 
   return (
-    <FavoritesContext.Provider value={{ favorites, toggleFavorite }}>
+    <FavoritesContext.Provider
+      value={{ favorites: favorites ?? [], toggleFavorite }}
+    >
       {children}
     </FavoritesContext.Provider>
   )
