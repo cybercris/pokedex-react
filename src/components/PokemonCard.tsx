@@ -18,7 +18,7 @@ export function PokemonCard({ pokemon }: PokemonCardProps) {
 
   return (
     <Link
-      to={`/pokemon/${data?.name}`}
+      to={`/pokemon/${data?.id}`}
       className="block px-4 py-1 border rounded-lg shadow-md hover:opacity-80 transition"
     >
       {/* <span className={data?.types[0].type.name}> */}

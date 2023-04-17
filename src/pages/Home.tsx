@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { MdCatchingPokemon } from 'react-icons/md'
-import { BsStarFill } from 'react-icons/bs'
+import { BsStars } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 import usePokemonList from '../hooks/usePokemonList'
 
@@ -27,11 +28,11 @@ export function Home() {
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-8">
-      <header className="flex items-center justify-between mb-6 px-1">
+      <header className="flex items-end justify-between mb-6 px-1">
         <div className="flex items-center">
           <button
             className="flex text-2xl font-bold text-black mr-5 
-              hover:opacity-70 hover:underline transition"
+              hover:opacity-70 transition"
             type="button"
             onClick={() => setPage(1)}
           >
@@ -39,10 +40,10 @@ export function Home() {
           </button>
           {isLoading && <Loader />}
         </div>
-        <BsStarFill
-          className="hover:opacity-70 transition cursor-pointer"
-          size={24}
-        />
+        <Link to="/favorites" className="flex hover:underline hover:opacity-70">
+          <BsStars className="mr-1" size={24} />
+          <span className="text-lg">Favorites</span>
+        </Link>
       </header>
       <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {!isLoading &&
