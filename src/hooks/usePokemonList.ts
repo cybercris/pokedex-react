@@ -14,7 +14,7 @@ async function getPokemonList(
   return data
 }
 
-export default function usePokemonList(page: number, limit: number) {
+export function usePokemonList(page: number, limit: number) {
   return useQuery(['pokemonList', page], () => getPokemonList(page, limit), {
     staleTime: 1000 * 60 * 10,
   })

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   BsArrowLeft,
   BsChevronLeft,
@@ -7,9 +7,9 @@ import {
   BsStarFill,
 } from 'react-icons/bs'
 import { RiRulerLine, RiScales2Line } from 'react-icons/ri'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
-import usePokemon from '../hooks/usePokemon'
+import { usePokemon } from '../hooks/usePokemon'
 import { useFavorites } from '../contexts/FavoritesContext'
 import api from '../services/api'
 import { renderAbilityName, renderId, renderStatName } from '../utils'

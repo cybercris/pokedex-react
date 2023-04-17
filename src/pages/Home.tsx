@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdCatchingPokemon } from 'react-icons/md'
 import { BsStars } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
-import usePokemonList from '../hooks/usePokemonList'
+import { usePokemonList } from '../hooks/usePokemonList'
 
 import { PokemonCard } from '../components/PokemonCard'
 import { Loader } from '../components/Loader'

@@ -1,6 +1,7 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-import usePokemon from '../hooks/usePokemon'
+import { usePokemon } from '../hooks/usePokemon'
 import { SimpleAttribute } from '../types/pokemon'
 import { renderId } from '../utils'
 

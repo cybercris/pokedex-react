@@ -8,7 +8,7 @@ async function getPokemon(name: string): Promise<Pokemon> {
   return data
 }
 
-export default function usePokemon(name: string) {
+export function usePokemon(name: string) {
   return useQuery(['pokemon', name], () => getPokemon(name), {
     staleTime: 1000 * 60 * 10,
   })

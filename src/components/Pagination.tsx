@@ -1,3 +1,5 @@
+import React from 'react'
+
 interface PaginationProps {
   totalCountOfRegister?: number
   registersPerPage?: number
