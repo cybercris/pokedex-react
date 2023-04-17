@@ -19,7 +19,7 @@ export function PokemonCard({ pokemon }: PokemonCardProps) {
   return (
     <Link
       to={`/pokemon/${data?.id}`}
-      className="block px-4 py-1 border rounded-lg shadow-md hover:opacity-80 transition"
+      className="block px-4 py-1 border rounded-lg shadow-md hover:opacity-80 transition bg-white"
     >
       {/* <span className={data?.types[0].type.name}> */}
       <p className="text-end">#{renderId(String(data?.id))}</p>
@@ -27,7 +27,7 @@ export function PokemonCard({ pokemon }: PokemonCardProps) {
       <div className="flex justify-center">
         {data?.sprites.front_default && (
           <img
-            className="h-28"
+            className="h-24"
             src={data?.sprites.front_default}
             alt={`image of ${pokemon?.name}`}
           />

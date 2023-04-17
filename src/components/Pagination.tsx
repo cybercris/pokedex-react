@@ -73,7 +73,7 @@ export function Pagination({
             ))
           : ''}
 
-        <li className="flex items-center justify-center w-8 h-8">
+        <li className="flex items-center justify-center w-8 h-8 border border-gray-700">
           <button
             className="w-6 h-6 block text-center"
             type="button"
